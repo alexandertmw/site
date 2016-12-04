@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body style="padding:0;margin:0;">
+<div id="video-container">
+</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://jwpsrv.com/library/h6DP6EEDEeOW9hIxOQfUww.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+	jwplayer("video-container").setup({ 
+    	playlist: 'https://jwpsrv.com/feed/4aChbOrd.rss',
+    	width: '640px',
+    	height: '360px',
+    	aspectratio: '16:9',
+    	fallback: 'false',
+    	autostart: 'true'
+    });
+});
+
+</script>
+
+</body>
+</html>
+

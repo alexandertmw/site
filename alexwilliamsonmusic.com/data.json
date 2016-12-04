@@ -1,0 +1,169 @@
+{
+	"videos":
+	[
+		{
+			"title":"Maybelline Buffs Commercial",
+			"thumbnail":"img/thumbs/maybellinebuffs-preview.jpg",
+			"url":"http://player.vimeo.com/video/111769724"
+		},
+		{
+			"title":"Norton Commercial",
+			"thumbnail":"img/thumbs/norton-preview.jpg",
+			"url":"http://player.vimeo.com/video/111771233"
+		},
+		{
+			"title":"Ford Commercial",
+			"thumbnail":"img/thumbs/fordzookeeper-preview.jpg",
+			"url":"http://player.vimeo.com/video/115538407"
+		},
+		{
+			"title":"Coke - A Generous World",
+			"thumbnail":"https://i.vimeocdn.com/video/515682865_295x166.jpg",
+			"url":"https://player.vimeo.com/video/125545907"
+		},
+		{
+			"title":"Lindt - Master",
+			"thumbnail":"https://i.vimeocdn.com/video/516082239_295x166.jpg",
+			"url":"https://player.vimeo.com/video/125841369"
+		},
+		{
+			"title":"Sears Commercial",
+			"thumbnail":"img/thumbs/sears-preview.jpg",
+			"url":"https://player.vimeo.com/video/111769721"
+		},
+		{
+			"title":"BandQ - Bathroom",
+			"thumbnail":"img/thumbs/bandq-preview.jpg",
+			"url":"https://player.vimeo.com/video/125354522"
+		},
+		{
+			"title":"Maybelline Plums Commercial",
+			"thumbnail":"img/thumbs/maybellineplums-preview.jpg",
+			"url":"https://player.vimeo.com/video/111769729"
+		},
+		{
+			"title":"Old Navy Commercial",
+			"thumbnail":"img/thumbs/oldnavy-preview.jpg",
+			"url":"https://player.vimeo.com/video/111769864"
+		},
+		{
+			"title":"USPS Commercial",
+			"thumbnail":"http://i.vimeocdn.com/video/496506165_200x150.jpg",
+			"url":"https://player.vimeo.com/video/111769731"
+		},
+		{
+			"title":"Ford - Baseball",
+			"thumbnail":"https://i.vimeocdn.com/video/516081860_295x166.jpg",
+			"url":"https://player.vimeo.com/video/125841370"
+		},
+		{
+			"title":"Lexus - CT Opera Long",
+			"thumbnail":"https://i.vimeocdn.com/video/515684655_295x166.jpg",
+			"url":"https://player.vimeo.com/video/125546793"
+		},
+		{
+			"title":"Cheeky Promo",
+			"thumbnail":"http://i.vimeocdn.com/video/515632695_200x150.jpg",
+			"url":"https://player.vimeo.com/video/125436571"
+		}
+	],
+	"music":
+	[
+		{
+			"genre":"Cinematic",
+			"songs":
+			[
+				{
+					"name":"Valor Redeemed",
+					"file":"audio/Valor Redeemed v2.2.mp3"
+				},
+				{
+					"name":"Cracking the Code",
+					"file":"audio/Cracking the Code v4 ALT.mp3"
+				},
+				{
+					"name":"Epiphany",
+					"file":"audio/Epiphany v3.mp3"
+				},
+				{
+					"name":"Hall of Legends",
+					"file":"audio/Hall of Legends v5.2.mp3"
+				},
+				{
+					"name":"Adieu",
+					"file":"audio/Adieu v7.mp3"
+				},
+				{
+					"name":"On Life's Journey",
+					"file":"audio/On Life's Journey v2.2.mp3"
+				},
+				{
+					"name":"The Stroke of Midnight",
+					"file":"audio/The Stroke of Midnight v6.3.mp3"
+				},
+				{
+					"name":"Enchantment",
+					"file":"audio/Enchantment v10.mp3"
+				}
+			]
+		},
+		{
+			"genre":"Contemporary",
+			"songs":
+			[
+				{
+					"name":"Daybreak",
+					"file":"audio/Daybreak v9.mp3"
+				},
+				{
+					"name":"New Way",
+					"file":"audio/New Way.mp3"
+				},
+				{
+					"name":"Upbeat Drive",
+					"file":"audio/Upbeat Drive 60s.mp3"
+				},
+				{
+					"name":"A Better Day",
+					"file":"audio/A Better Day v1.7.mp3"
+				},
+				{
+					"name":"Boldly Go",
+					"file":"audio/Norton 60s v4.mp3"
+				}
+			]
+		},
+{
+			"genre":"Pop & Rock",
+			"songs":
+			[
+				{
+					"name":"Pacific Coast",
+					"file":"audio/Pacific Coast v2.3.mp3"
+				},
+				{
+					"name":"Get Up",
+					"file":"audio/Get Up v3.mp3"
+				},
+				{
+					"name":"Solar Expressway Trailer",
+					"file":"audio/Solar Expressway v4.mp3"
+				},
+				{
+					"name":"Kardashian Kollection",
+					"file":"audio/Sears v7.mp3"
+				}
+			]
+		}
+		
+    	],
+    "about":"<p>Coming Soon</p>",
+    "contact":
+    {
+    	"email":"contact@alexwilliamsonmusic.com",
+    	"imdb":"http://www.imdb.com/name/nm4338945/",
+    	"twitter":"alexandertmw",
+    	"soundcloud":"http://www.soundcloud.com/alexandertmw"
+    }
+}
+

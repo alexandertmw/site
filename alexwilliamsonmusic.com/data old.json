@@ -1,0 +1,42 @@
+{
+	"videos":
+	[
+		{
+			"title":"USPS Commercial",
+			"thumbnail":"img/thumbs/usps-preview.jpg",
+			"playlist":"https://jwpsrv.com/feed/4aChbOrd.rss"
+		},
+		{
+			"title":"Maybelline Commercial",
+			"thumbnail":"img/thumbs/maybelline-preview.jpg",
+			"playlist":"https://jwpsrv.com/feed/RBcWQt88.rss"
+		},
+		{
+			"title":"Old Navy Commercial",
+			"thumbnail":"img/thumbs/oldnavy-preview.jpg",
+			"playlist":"https://jwpsrv.com/feed/Oqg6GJeJ.rss"
+		}
+	],
+	"music":
+	[
+		{
+			"genre":"Cinematic",
+			"songs":
+			[
+				{
+					"name":"Valor Redeemed",
+					"file":"audio/Valor Redeemed v2.2.mp3"
+				}
+			]
+		}
+    ],
+    "about":"<p>Alex Williamson</p>",
+    "contact":
+    {
+    	"email":"contact@alexwilliamsonmusic.com",
+    	"imdb":"imdb.com/name/nm4338945/",
+    	"twitter":"alexandertmw",
+    	"soundcloud":"soundcloud.com/alexandertmw"
+    }
+}
+

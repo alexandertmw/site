@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Alex Williamson
+</title>
+<link href="aw.css" rel="stylesheet" media="screen">
+<link rel="shortcut icon" href="img/favicon.png">
+<!--
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+-->
+
+<link rel="stylesheet" href="fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta charset="utf-8">
+
+</head>
+<body class="background">
+
+<div class="main-content">
+	<div class="site-header">
+		<h1>Alex Williamson . Composer</h1>
+	</div>
+	<div class="inner-content">
+		<div id="carousel-row">
+		
+			<div id="left-scroll-block">
+				<a id="lscroll-button" href="#"><img class="scrollimg" src="leftarrow.png"></a>
+			</div>
+			<div id="carousel-wrap">
+				<ul id="carousel"><li>
+						<a class="jwvidlink" href="https://jwpsrv.com/feed/4aChbOrd.rss" rel="group"><img class="vidthumb" src="http://cityyearnh.files.wordpress.com/2011/02/boat.jpg" /></a>
+					</li><li>
+						<a class="iframebox fancybox.iframe" href="playertest.html"><img class="vidthumb" src="http://cityyearnh.files.wordpress.com/2011/02/boat.jpg" /></a>
+					</li><li>
+						<a href="#"><img class="vidthumb" src="http://cityyearnh.files.wordpress.com/2011/02/boat.jpg" /></a>
+					</li><li>
+						<a href="#"><img class="vidthumb" src="http://cityyearnh.files.wordpress.com/2011/02/boat.jpg" /></a>
+					</li></ul>
+				<div id="carousel-fade-left"></div>
+				<div id="carousel-fade-right"></div>
+			</div>
+			<div id="right-scroll-block">
+				<a id="rscroll-button" href="#"><img class="scrollimg" src="rightarrow.png"></a>
+			</div>
+		</div>
+	</div>
+	<ul class="nav">
+		<li>
+			<a href="#">Home</a>
+		</li>
+		<li>
+			<a href="#">About</a>
+		</li>
+		<li>
+			<a href="#">Music</a>
+		</li>
+		<li>
+			<a href="#">Contact</a>
+		</li>
+	</ul>
+</div>
+
+<style>
+
+#carousel-row {
+	position:relative;
+}
+
+#left-scroll-block {
+	position:absolute;
+	left:0;
+	width:40px;
+	height:100px;
+}
+
+#right-scroll-block {
+	position:absolute;
+	right:0;
+	top:0;
+	width:40px;
+	height:100px;
+}
+
+#carousel-wrap {
+	position:relative;
+	padding:0;
+	margin:0;
+	left:40px;
+	width:600px;
+	overflow:hidden;
+}
+
+#carousel {
+	list-style:none;
+	padding:0;
+	margin:0;
+	overflow:visible;
+	height:100px;
+	position:relative;
+	width:600px;
+	white-space:nowrap;
+}
+
+#carousel>li {
+	display: inline-block;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#carousel-fade-left, #carousel-fade-right {
+	position:absolute;
+	width:200px;
+	height:100px;
+	pointer-events:none;
+}
+
+#carousel-fade-left {
+	left:0;
+	top:0;
+	background: none;
+	background: -webkit-gradient(linear, left top, right top, from(rgba(30, 30, 30, 1.0)), to(rgba(30, 30, 30, 0))); /* Saf4+, Chrome */
+	background: -webkit-linear-gradient(left, rgba(30, 30, 30, 1.0), rgba(30, 30, 30, 0.0)); /* Chrome 10+, Saf5.1+ */
+	background: -moz-linear-gradient(left, rgba(30, 30, 30, 1.0), rgba(30, 30, 30, 0)); /* FF3.6+ */
+	background: -ms-linear-gradient(top, #444444, #999999); /* IE10 */
+	background: -o-linear-gradient(top, #444444, #999999); /* Opera 11.10+ */
+	background: linear-gradient(top, #444444, #999999); /* W3C */
+}
+
+#carousel-fade-right {
+	right:0;
+	top:0;
+	background: none;
+	background: -webkit-gradient(linear, left top, right top, from(rgba(30, 30, 30, 0.0)), to(rgba(30, 30, 30, 1.0))); /* Saf4+, Chrome */
+	background: -webkit-linear-gradient(left, rgba(30, 30, 30, 0.0), rgba(30, 30, 30, 1.0)); /* Chrome 10+, Saf5.1+ */
+	background: -moz-linear-gradient(left, rgba(30, 30, 30, 0.0), rgba(30, 30, 30, 1.0)); /* FF3.6+ */
+	background: -ms-linear-gradient(top, #444444, #999999); /* IE10 */
+	background: -o-linear-gradient(top, #444444, #999999); /* Opera 11.10+ */
+	background: linear-gradient(top, #444444, #999999); /* W3C */
+}
+
+.vidthumb {
+	width: 180px;
+	height: 100px;
+}
+
+</style>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script src="http://jwpsrv.com/library/h6DP6EEDEeOW9hIxOQfUww.js"></script>
+
+<script type="text/javascript" src="fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+<script type="text/javascript">
+
+var MIN_CENTER_INDEX = 2;
+var SCROLL_AMOUNT = 1;
+var center_vid_index = 2;
+
+function centervid(index) {
+	var center_vid = $('#carousel li:nth-child(' + index + ')');
+	var container_center = $('#carousel-wrap').width() / 2;
+	var vid_center = center_vid.position().left + (center_vid.outerWidth() / 2);
+	//$('#carousel').css('left', container_center - vid_center + 'px');
+	$('#carousel').animate(
+		{'left':container_center - vid_center + 'px'},
+		100*(Math.abs(center_vid_index - index)));
+	center_vid_index = index;
+}
+
+function scrollLeft() {
+	if (center_vid_index > MIN_CENTER_INDEX) {
+		centervid(Math.max(center_vid_index - SCROLL_AMOUNT, MIN_CENTER_INDEX));
+	}
+}
+
+function scrollRight() {
+	var vid_count = $('#carousel li').length;
+	var max_center_index = vid_count + 1 - MIN_CENTER_INDEX;
+	if (center_vid_index < max_center_index) {
+		centervid(Math.min(center_vid_index + SCROLL_AMOUNT, max_center_index));
+	}
+}
+
+$(document).ready(function() {
+/*
+	$("a.jwvidlink").click(function() {
+		var vidurl = this.href;
+		var vidid = 'video-container_' + Math.floor((Math.random()*10000)+1);
+
+        $.fancybox({
+            padding: 8,
+            content: '<div id="' + vidid + '"></div>',
+            autoSize: false,
+            width: '640px',
+            height: '360px',
+            scrolling: 'no',
+            afterShow: function(){
+                jwplayer(vidid).setup({ 
+                	playlist: vidurl,
+                	width: '640px',
+                	height: '360px',
+                	aspectratio: '16:9',
+                	fallback: 'false',
+                	autostart: 'true'
+                });
+            },
+        });
+        return false;
+    });*/
+    
+    $(".iframebox").fancybox({
+		width	: (640),
+		height	: (360),
+		padding : 4,
+		fitToView	: false,
+		autoSize	: true,
+		closeClick	: false,
+		openEffect	: 'none',
+		closeEffect	: 'none',
+	});
+	
+	//centervid(2);
+	$("#lscroll-button").click(scrollLeft);
+	$("#rscroll-button").click(scrollRight);
+});
+
+</script>
+
+</body>
+</html>
+

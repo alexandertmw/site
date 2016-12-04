@@ -1,0 +1,192 @@
+<%inherit file="/base.html"/>
+
+<%block name="base_head">
+<link type="text/css" href="midnight.black/jplayer.midnight.black.css" rel="stylesheet" />
+<link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+<style>
+
+#genre-widget {
+	width:340px;
+	margin-top:40px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:0px;
+}
+
+#genre-tabs {
+	width:120px;
+	margin-top:5px;
+	margin-bottom:0;
+	margin-right:0;
+	border-right:none;
+	padding-left:0;
+	font-weight:bold;
+}
+
+#genre-tabs>li.active>a, #genre-tabs>li.active>a:hover {
+	background-color: #353535;
+	font-weight:bold;
+	color: #929897;
+	border: 1px solid transparent;
+	border-color: #707070 transparent #707070 #707070 ;
+}
+
+#genre-tabs>li>a:hover {
+	background-color: #353535;
+	color: #FFFFFF;
+	border: 1px solid transparent;
+	border-color: #707070 transparent #707070 #707070;
+}
+
+#genre-content {
+	padding:14px 0px 0px 22px;
+	-webkit-border-radius: 4px 4px 4px 4px;
+	-moz-border-radius: 4px 4px 4px 4px;
+	border-radius: 4px 4px 4px 4px;
+	border: 1px solid #707070;
+	border-color: #707070 #707070 #707070 #707070; /* top right bottom left */
+	background-color: #353535;
+	font-size:14px;
+	min-height: 200px;
+}
+
+.genre-pane {
+	display:inline-block;
+	text-align:left;
+	vertical-align:text-top;
+}
+
+.nav>li>a {
+	text-decoration:none;
+	color:#929897;
+}
+
+.song-column {
+	width:180px;
+	display:inline-block;
+	vertical-align:text-top;
+}
+
+.music-item>a {
+	color: #929897;
+	text-decoration:none;
+}
+
+.music-item>a:hover {
+	color: #FFFFFF;
+	text-decoration:none;
+}
+
+.music-item>p {
+	margin-top:3px;
+}
+
+</style>
+</%block>
+
+<%block name="inner_content">
+<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+<div id="jp_container_1" class="jp-audio" style="margin-left:auto;margin-right:auto;">
+    <div class="jp-type-single">
+      <div class="jp-gui jp-interface">
+        <ul class="jp-controls">
+          <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+          <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+          <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+          <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+          <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+          <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+        </ul>
+        <div class="jp-progress">
+          <div class="jp-seek-bar">
+            <div class="jp-play-bar"></div>
+          </div>
+        </div>
+        <div class="jp-volume-bar">
+          <div class="jp-volume-bar-value"></div>
+        </div>
+        <div class="jp-time-holder">
+          <div class="jp-current-time"></div>
+          <div class="jp-duration"></div>
+        </div>
+      </div>
+      <!--
+      <div class="jp-title">
+        <ul>
+          <li>Bubble</li>
+        </ul>
+      </div>
+      -->
+      <div class="jp-no-solution">
+        <span>Update Required</span>
+        To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+      </div>
+    </div>
+</div>
+<div id="genre-widget" class="tabbable tabs-left">
+	<ul id="genre-tabs" class="nav nav-tabs">
+% for genre in genres:
+		<li ${'class="active"' if loop.index == 0 else ''}><a href="#tab-${ loop.index }" data-toggle="tab">${genre['name']}</a></li>
+% endfor
+	</ul>
+	<div id="genre-content" class="tab-content">
+% for genre in genres:
+		<div class="genre-pane tab-pane ${'active' if loop.index == 0 else ''}" id="tab-${ loop.index }">
+			<div class="song-column">
+% for song in genre['songs_left']:
+				<div class="music-item">
+					<a class="music-link" href="${song['file']}">${song['name']}</a>
+% if 'description' in song:
+					<p>${song['description']}</p>
+% endif
+				</div>
+% endfor
+			</div><div class="song-column">
+% for song in genre['songs_right']:
+				<div class="music-item">
+					<a class="music-link" href="${song['file']}">${song['name']}</a>
+% if 'description' in song:
+					<p>${song['description']}</p>
+% endif
+				</div>
+% endfor
+			</div>
+		</div>
+%endfor
+	</div>
+</div>
+
+</%block>
+
+<%block name="body_end">
+
+
+<script type="text/javascript" src="jPlayer/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+	$("#jquery_jplayer_1").jPlayer({
+		ready: function() { $(this).jPlayer("setMedia", {mp3: "${genres[0]['songs_left'][0]['file']}"}); },
+        swfPath: "jPlayer",
+        supplied: "mp3"
+      });
+    
+	$('.music-link').click(function(event) {
+		
+		var href = $(this).attr('href');
+		$("#jquery_jplayer_1").jPlayer("setMedia", {mp3: href});
+		$("#jquery_jplayer_1").jPlayer("play");
+		
+		event.preventDefault();
+		return false;
+	});
+});
+
+</script>
+
+</%block>
+
+

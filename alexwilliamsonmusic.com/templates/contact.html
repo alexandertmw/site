@@ -1,0 +1,67 @@
+<%inherit file="/base.html"/>
+
+<%block name="base_head">
+<style>
+
+#contact-wrapper {
+	text-align:center;
+}
+
+#contact {
+	margin-left:auto;
+	margin-right:auto;
+	list-style:none;
+	vertical-align:middle;
+	padding:0;
+	display:inline-block;
+	text-align:left;
+}
+
+#contact>li {
+	vertical-align:middle;
+	height:40px;
+	line-height:40px;
+}
+
+.socialicon {
+	width:32px;
+	height:32px;
+	margin-right:20px;
+	vertical-align: middle;
+}
+
+a {
+	text-decoration:none;
+	color:#A6ABAA;
+}
+
+a:hover {
+	text-decoration:underline;
+	color:#FFFFFF;
+}
+
+</style>
+</%block>
+
+<%block name="inner_content">
+<div id="contact-wrapper">
+<ul id="contact">
+	<li>
+		<img class="socialicon" src="img/social/email.png"><a href="mailto:${contact['email']}">email</a>
+	</li>
+	<li>
+		<img class="socialicon" src="img/social/imdb.png"><a href="${contact['imdb']}">profile</a>
+	</li>
+	<li>
+		<img class="socialicon" src="img/social/twitter.png"><a href="https://twitter.com/${contact['twitter']}">@${contact['twitter']}</a>
+	</li>
+	<li>
+		<img class="socialicon" src="img/social/soundcloud.png"><a href="${contact['soundcloud']}">soundcloud</a>
+	</li>
+</ul>
+</div>
+</%block>
+
+<%block name="body_end">
+</%block>
+
