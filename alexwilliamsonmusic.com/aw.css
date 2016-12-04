@@ -23,7 +23,7 @@ h2 {
 }
 
 .background {
-	background-color:#1C1C1C;
+	background-color: rgb(30, 30, 30);
 }
 
 .main-content {
@@ -64,4 +64,3 @@ ul.bottom-nav {
 	font-size:12px;
 	color:#404040;
 }
-
